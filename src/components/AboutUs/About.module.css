@@ -1,0 +1,59 @@
+.about {
+    background-color: var(--color-primary-second);
+    min-height: auto;
+    padding: 2rem 0;
+}
+
+.aboutContent {
+    display: block;
+}
+
+.aboutText {
+    width: 100%;
+}
+
+.description {
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    line-height: 1.7;
+    color: var(--color-text);
+    text-align: justify;
+    max-width: none;
+    margin: 0 auto;
+}
+
+.stats,
+.statItem,
+.statNumber,
+.statLabel {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 3rem 0;
+    }
+
+    .description {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .aboutContent {
+        gap: 1.5rem;
+    }
+
+    .stats {
+        gap: 1rem;
+    }
+
+    .statItem {
+        padding: 0.8rem;
+    }
+}

@@ -1,0 +1,213 @@
+.contacts {
+    min-height: auto;
+    padding: 2rem 0;
+}
+
+.contactsContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 5vw, 80px);
+    align-items: start;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactInfo h4 {
+    font-family: var(--font-family-h);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.welcomeText {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.contactDescription {
+    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.socialLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(253, 200, 160, 0.1);
+}
+
+.socialLink:hover {
+    color: var(--color-primary-third);
+    background: rgba(253, 200, 160, 0.2);
+    transform: translateX(5px);
+}
+
+.socialLink span {
+    padding: 0;
+    margin: 0;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    font-weight: 500;
+}
+
+.formInput,
+.formTextarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 3px solid var(--color-primary-third);
+    border-radius: 12px;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: var(--color-background);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+    outline: none;
+    border-color: var(--color-primary-first);
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitButton {
+    width: 100%;
+    height: 50px;
+    background: var(--color-primary-second);
+    border: none;
+    border-radius: 12px;
+    color: var(--color-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    margin-top: 0.5rem;
+}
+
+.submitButton:hover {
+    background: var(--color-primary-first);
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin: auto 0;
+    cursor: pointer;
+    accent-color: var(--color-primary-second);
+}
+
+.checkboxLabel {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    line-height: 1.4;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.privacyLink {
+    color: var(--color-primary-second);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: initial;
+}
+
+.privacyLink:hover {
+    color: var(--color-primary-first);
+}
+
+@media (max-width: 768px) {
+    .checkboxContainer {
+        gap: 10px;
+    }
+
+    .checkboxLabel {
+        font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .contactsContent {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .socialLinks {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .socialLink {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts {
+        padding: 2rem 0;
+    }
+
+    .contactsContent {
+        gap: 30px;
+    }
+
+    .formInput,
+    .formTextarea {
+        padding: 12px 15px;
+    }
+
+    .submitButton {
+        height: 45px;
+    }
+
+    .socialLinks {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 360px) {
+    .contactsContent {
+        gap: 20px;
+    }
+}
