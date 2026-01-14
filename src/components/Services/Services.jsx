@@ -1,9 +1,9 @@
 import styles from './Services.module.css';
-const EasySite = '/img/easySite.svg';
-const HardSite = '/img/hardSite.svg';
-const OnlineStore = '/img/onlineStore.svg';
-const TildaSite = '/img/tildaSite.svg';
-const Clock = '/img/clock.svg';
+const EasySite = '/images/easySite.svg';
+const HardSite = '/images/hardSite.svg';
+const OnlineStore = '/images/onlineStore.svg';
+const TildaSite = '/images/tildaSite.svg';
+const Clock = '/images/clock.svg';
 
 const Services = () => {
     const services = [

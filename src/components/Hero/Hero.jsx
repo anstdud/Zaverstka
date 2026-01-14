@@ -1,5 +1,5 @@
 import styles from './Hero.module.css';
-const Robot = '/img/robo.svg';
+const Robot = '/images/robo.svg';
 
 const Hero = () => {
     return (

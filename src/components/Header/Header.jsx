@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './Header.module.css';
-const Logo = '/img/logo.svg';
+const Logo = '/images/logo.svg';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
