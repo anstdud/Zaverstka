@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.footerBottom}>
-                    <p>© 2025 Zaverstka Team. Все права защищены.</p>
+                    <p>© 2026 Zaverstka Team. Все права защищены.</p>
                 </div>
             </div>
         </footer>

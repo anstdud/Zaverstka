@@ -139,7 +139,7 @@ ${data.projectDescription}
             if (result.ok) {
                 setSubmitStatus({
                     type: 'success',
-                    message: '✅ Заявка отправлена!',
+                    message: 'Заявка отправлена!',
                     details: 'Я свяжусь с вами в ближайшее время.',
                     timestamp: new Date().toLocaleTimeString()
                 });
@@ -149,7 +149,7 @@ ${data.projectDescription}
 
                 setSubmitStatus({
                     type: 'error',
-                    message: '❌ Ошибка отправки',
+                    message: 'Ошибка отправки',
                     details: 'Пожалуйста, свяжитесь со мной напрямую через Telegram или WhatsApp'
                 });
             }
@@ -159,7 +159,7 @@ ${data.projectDescription}
 
             setSubmitStatus({
                 type: 'error',
-                message: '❌ Ошибка отправки',
+                message: 'Ошибка отправки',
                 details: error.message || 'Попробуйте еще раз или свяжитесь напрямую'
             });
 
