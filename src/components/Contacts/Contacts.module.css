@@ -1,213 +1,286 @@
 .contacts {
-    min-height: auto;
-    padding: 2rem 0;
+    padding: 40px 0;
+    background-color: var(--color-background);
 }
 
 .contactsContent {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(30px, 5vw, 80px);
-    align-items: start;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.contactInfo {
-    display: flex;
-    flex-direction: column;
+@media (max-width: 992px) {
+    .contactsContent {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
 
-.contactInfo h4 {
-    font-family: var(--font-family-h);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin-bottom: 1rem;
-    text-align: left;
+.contactInfo h4,
+.formInfo h4 {
+    font-size: var(--font-size-h4);
+    color: var(--color-text);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.welcomeText,
+.contactDescription {
+    color: var(--color-text);
+    line-height: 1.6;
 }
 
 .welcomeText {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
 }
 
 .contactDescription {
-    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
-    opacity: 0.9;
-    margin-bottom: 2rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    margin-bottom: 40px;
 }
 
-.socialLinks {
+.contactMethods {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
-.socialLink {
+.contactButton {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60px;
+    padding: 18px 24px;
+    background: var(--color-background);
+    border: 2px solid var(--color-primary-second);
+    border-radius: var(--border-radius);
     text-decoration: none;
     color: var(--color-text);
-    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    font-size: 1rem;
+    font-family: var(--font-family);
     transition: all 0.3s ease;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: rgba(253, 200, 160, 0.1);
+    cursor: pointer;
 }
 
-.socialLink:hover {
-    color: var(--color-primary-third);
-    background: rgba(253, 200, 160, 0.2);
-    transform: translateX(5px);
+.contactButton:hover {
+    background: var(--color-primary-second);
+    border-color: var(--color-primary-fourth);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.socialLink span {
-    padding: 0;
-    margin: 0;
+.contactButton strong {
+    font-weight: 600;
 }
 
-.contactForm {
+.form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .formGroup {
-    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.formGroup label {
-    display: block;
-    font-size: clamp(0.9rem, 1.8vw, 1rem);
-    font-weight: 500;
+.fieldLabel {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
-.formInput,
-.formTextarea {
+.formGroup input,
+.formGroup textarea {
     width: 100%;
-    padding: 15px 20px;
-    border: 3px solid var(--color-primary-third);
-    border-radius: 12px;
-    font-size: clamp(0.9rem, 1.8vw, 1rem);
-    font-family: inherit;
+    padding: 16px;
+    border: 2px solid var(--color-primary-second);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-family);
     transition: all 0.3s ease;
     background: var(--color-background);
-}
-
-.formInput:focus,
-.formTextarea:focus {
-    outline: none;
-    border-color: var(--color-primary-first);
-}
-
-.formTextarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.submitButton {
-    width: 100%;
-    height: 50px;
-    background: var(--color-primary-second);
-    border: none;
-    border-radius: 12px;
     color: var(--color-text);
-    font-weight: 600;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--color-primary-third);
+}
+
+.formGroup textarea {
+    resize: none; /* Изменено с vertical на none */
+    min-height: 140px;
+    overflow-y: auto; /* Добавлена возможность прокрутки при большом тексте */
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.checkboxBox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--color-primary-second);
+    border-radius: 6px;
+    position: relative;
+    flex-shrink: 0;
     transition: all 0.3s ease;
-    font-size: clamp(0.9rem, 1.8vw, 1rem);
-    margin-top: 0.5rem;
 }
 
-.submitButton:hover {
-    background: var(--color-primary-first);
+.checkbox input:checked + .checkboxBox {
+    background: var(--color-primary-third);
+    border-color: var(--color-primary-third);
 }
 
-.checkboxContainer {
+.checkbox input:checked + .checkboxBox:after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-light);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.checkboxText {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.privacyLink {
+    color: var(--color-primary-fourth);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.privacyLink:hover {
+    color: var(--color-primary-third);
+    text-decoration: underline;
+}
+
+.message {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+    animation: slideIn 0.3s ease;
+}
+
+.message.success {
+    background: color-mix(in srgb, var(--color-primary-second) 15%, transparent);
+    border: 2px solid var(--color-primary-fourth);
+}
+
+.message.error {
+    background: color-mix(in srgb, #ff4757 15%, transparent);
+    border: 2px solid #ff4757;
+}
+
+.messageHeader {
     display: flex;
     align-items: flex-start;
     gap: 12px;
 }
 
-.checkboxInput {
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    margin: auto 0;
-    cursor: pointer;
-    accent-color: var(--color-primary-second);
+.messageIcon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
-.checkboxLabel {
-    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-    line-height: 1.4;
+.messageText {
+    margin: 5px 0 0 0;
+    line-height: 1.5;
     color: var(--color-text);
+}
+
+.timestamp {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 18px;
+    background: var(--color-primary-third);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    font-family: var(--font-family);
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
 }
 
-.privacyLink {
-    color: var(--color-primary-second);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: initial;
+.submitButton:hover:not(:disabled) {
+    background: var(--color-primary-fourth);
+    transform: translateY(-2px);
 }
 
-.privacyLink:hover {
-    color: var(--color-primary-first);
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
-    .checkboxContainer {
-        gap: 10px;
-    }
-
-    .checkboxLabel {
-        font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-    }
+.submitButton.loading {
+    opacity: 0.8;
 }
 
-@media (max-width: 768px) {
-    .contactsContent {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .socialLinks {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .socialLink {
-        flex: 1;
-        min-width: 120px;
-        justify-content: center;
-        text-align: center;
-    }
+.buttonSpinner {
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--color-text-light);
+    animation: spin 1s linear infinite;
 }
 
-@media (max-width: 480px) {
-    .contacts {
-        padding: 2rem 0;
-    }
+.fieldError {
+    color: #ff4757;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
 
-    .contactsContent {
-        gap: 30px;
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
-
-    .formInput,
-    .formTextarea {
-        padding: 12px 15px;
-    }
-
-    .submitButton {
-        height: 45px;
-    }
-
-    .socialLinks {
-        flex-direction: column;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 360px) {
-    .contactsContent {
-        gap: 20px;
-    }
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
