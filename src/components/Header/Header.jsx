@@ -39,7 +39,6 @@ const Header = () => {
                         Zaverstka
                     </a>
 
-                    {/* Бургер-меню */}
                     <div
                         className={`${styles.burgerMenu} ${isMenuOpen ? styles.active : ''}`}
                         onClick={toggleMenu}

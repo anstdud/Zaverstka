@@ -33,6 +33,13 @@ const Services = () => {
         }
     ];
 
+    const scrollToContacts = () => {
+        const contactsSection = document.getElementById('contacts');
+        if (contactsSection) {
+            contactsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="services" className={styles.serviceSection}>
             <div className="container">
@@ -49,7 +56,12 @@ const Services = () => {
                                 <img src={Clock} alt="Срок выполнения" className={styles.clockIcon} />
                                 <p className={styles.serviceTerm}>{service.term}</p>
                             </div>
-                            <button className={styles.serviceBtn}>Обсудить проект</button>
+                            <button
+                                className={styles.serviceBtn}
+                                onClick={scrollToContacts}
+                            >
+                                Обсудить проект
+                            </button>
                         </div>
                     ))}
                 </div>
