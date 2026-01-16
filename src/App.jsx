@@ -6,20 +6,23 @@ import About from './components/AboutUs/About.jsx';
 import Contacts from './components/Contacts/Contacts.jsx';
 import Process from "./components/Process/Process.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import { HashRouter as Router } from 'react-router-dom';
 
 function App() {
     return (
-        <div className="App">
-            <Header />
-            <main>
-                <Hero />
-                <Services />
-                <Process />
-                <About />
-                <Contacts />
-            </main>
-            <Footer/>
-        </div>
+        <Router>
+            <div className="App">
+                <Header />
+                <main>
+                    <Hero />
+                    <Services />
+                    <Process />
+                    <About />
+                    <Contacts />
+                </main>
+                <Footer/>
+            </div>
+        </Router>
     );
 }
 
