@@ -16,26 +16,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clear-cache": "react-scripts start --clear-cache"
   },
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all",
-      "last 2 versions",
-      "Firefox ESR",
-      "chrome >= 60",
-      "safari >= 12",
-      "edge >= 79",
-      "opera >= 58",
-      "yandex >= 21.3"
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version",
-      "last 1 yandex version"
+      "last 1 safari version"
     ]
   }
 }
