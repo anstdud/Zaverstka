@@ -2,11 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico?t=<%= new Date().getTime() %>" type="image/x-icon">
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#4C5C13" />
   <meta name="description" content="Сайты, которые рассказывают историю вашего бренда и привлекают клиентов. Уделяем внимание каждой детали, чтобы результат превзошел ожидания.">
@@ -16,25 +12,5 @@
 </head>
 <body>
 <div id="root"></div>
-
-<script>
-  window.addEventListener('load', function() {
-    const timestamp = new Date().getTime();
-    const links = document.querySelectorAll('link[rel*="icon"]');
-
-    links.forEach(link => {
-      link.parentNode.removeChild(link);
-    });
-
-    const newLink = document.createElement('link');
-    newLink.rel = 'icon';
-    newLink.href = '/favicon.ico?t=' + timestamp + '_' + Math.random();
-    newLink.type = 'image/x-icon';
-    document.head.appendChild(newLink);
-
-    const img = new Image();
-    img.src = '/favicon.ico?force=' + timestamp;
-  });
-</script>
 </body>
 </html>
