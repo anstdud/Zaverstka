@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -13,13 +14,12 @@ const Footer = () => {
                     </div>
 
                     <div className={styles.privacyLinks}>
-                        <a
-                            href="/privacy-policy.html"
+                        <Link
+                            to="/privacy-policy"
                             className={styles.privacyLink}
-                            rel="noopener noreferrer"
                         >
                             Политика конфиденциальности
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

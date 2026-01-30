@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import styles from './Contacts.module.css';
 
 const Contacts = () => {
@@ -287,13 +288,12 @@ ${data.projectDescription}
                                     <span className={styles.checkboxBox}></span>
                                     <span className={styles.checkboxText}>
                                         Я согласен с обработкой{' '}
-                                        <a
-                                            href="/privacy-policy.html"
+                                        <Link
+                                            to="/privacy-policy"
                                             className={styles.privacyLink}
-                                            rel="noopener noreferrer"
                                         >
-                                            персональных данных
-                                        </a>{' '}
+                                            Политика конфиденциальности
+                                        </Link>{' '}
                                     </span>
                                 </label>
                                 {errors.agreement && (

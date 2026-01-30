@@ -5,23 +5,32 @@ import Services from './components/Services/Services.jsx';
 import About from './components/AboutUs/About.jsx';
 import Contacts from './components/Contacts/Contacts.jsx';
 import Process from "./components/Process/Process.jsx";
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
 import Footer from "./components/Footer/Footer.jsx";
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
     return (
         <Router>
-            <div className="App">
-                <Header />
-                <main>
-                    <Hero />
-                    <Services />
-                    <Process />
-                    <About />
-                    <Contacts />
-                </main>
-                <Footer/>
-            </div>
+            <Routes>
+                {/* Главная страница - с Header и Footer */}
+                <Route path="/" element={
+                    <div className="App">
+                        <Header />
+                        <main>
+                            <Hero />
+                            <Services />
+                            <Process />
+                            <About />
+                            <Contacts />
+                        </main>
+                        <Footer />
+                    </div>
+                } />
+
+                {/* Страница политики - БЕЗ Header и Footer */}
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            </Routes>
         </Router>
     );
 }
