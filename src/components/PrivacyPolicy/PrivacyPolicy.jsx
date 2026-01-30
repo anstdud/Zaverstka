@@ -1,12 +1,13 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import './PrivacyPolicy.css';
 
 const PrivacyPolicy = () => {
-    const navigate = useNavigate();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleBack = () => {
-        navigate('/');
+        window.history.back();
     };
 
     return (
@@ -17,18 +18,7 @@ const PrivacyPolicy = () => {
                         onClick={handleBack}
                         className="back-button"
                     >
-                        <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            style={{ marginRight: '8px' }}
-                        >
-                            <path d="M19 12H5M12 19l-7-7 7-7" />
-                        </svg>
-                        Назад
+                        ← Назад
                     </button>
                 </div>
 

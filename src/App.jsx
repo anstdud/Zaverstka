@@ -13,7 +13,6 @@ function App() {
     return (
         <Router>
             <Routes>
-                {/* Главная страница - с Header и Footer */}
                 <Route path="/" element={
                     <div className="App">
                         <Header />
@@ -28,7 +27,6 @@ function App() {
                     </div>
                 } />
 
-                {/* Страница политики - БЕЗ Header и Footer */}
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
         </Router>
