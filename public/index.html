@@ -2,76 +2,38 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.ico">
-
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <meta name="apple-mobile-web-app-title" content="Zaverstka">
-
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <meta name="msapplication-TileColor" content="#4C5C13">
   <meta name="msapplication-TileImage" content="mstile-144x144.png">
-  <meta name="msapplication-config" content="browserconfig.xml">
+
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
+
   <meta name="theme-color" content="#4C5C13">
-
-  <meta name="yandex-tableau-widget" content="logo=https://zaverstka.ru/favicon-32x32.png, color=#4C5C13">
-  <link rel="yandex-tableau-widget" href="yandex-browser.json">
-
-  <link rel="icon" href="/favicon.ico?yandex=1" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico?yandex=1">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Сайты, которые рассказывают историю вашего бренда и привлекают клиентов. Уделяем внимание каждой детали, чтобы результат превзошел ожидания." />
-  <meta name="keywords" content="создание сайтов, верстка, лендинг, интернет-магазин, разработка сайтов" />
+  <meta name="description" content="Сайты, которые рассказывают историю вашего бренда и привлекают клиентов." />
   <title>Zaverstka</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 <body>
 <div id="root"></div>
+
 <script>
-  if (navigator.userAgent.includes('Edge') ||
-          navigator.userAgent.includes('YaBrowser')) {
-
-    console.log('Applying favicon fix for Edge/Yandex');
-
-    const faviconLinks = [
-      { rel: 'icon', href: 'favicon.ico', type: 'image/x-icon' },
-      { rel: 'icon', href: 'favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { rel: 'apple-touch-icon', href: 'apple-touch-icon.png', sizes: '180x180' }
-    ];
-
-    document.querySelectorAll('link[rel*="icon"]').forEach(link => link.remove());
-
-    faviconLinks.forEach(linkData => {
-      const link = document.createElement('link');
-      Object.keys(linkData).forEach(key => {
-        link.setAttribute(key, linkData[key]);
-      });
-      document.head.appendChild(link);
+  setTimeout(() => {
+    const links = document.querySelectorAll('link[rel*="icon"]');
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.includes('?')) {
+        link.href = href + '?v=' + Date.now();
+      }
     });
-
-    const forceFaviconUpdate = () => {
-      const link = document.createElement('link');
-      link.rel = 'icon';
-      link.href = 'favicon.ico?v=' + new Date().getTime();
-      document.head.appendChild(link);
-
-      setTimeout(() => {
-        const img = new Image();
-        img.src = 'favicon.ico?v=' + new Date().getTime();
-      }, 100);
-    };
-
-    forceFaviconUpdate();
-  }
+  }, 1000);
 </script>
 </body>
 </html>
