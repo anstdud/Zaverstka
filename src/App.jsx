@@ -7,7 +7,8 @@ import Contacts from './components/Contacts/Contacts.jsx';
 import Process from "./components/Process/Process.jsx";
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
 import Footer from "./components/Footer/Footer.jsx";
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound/NotFound.jsx';
 
 function App() {
     return (
@@ -26,8 +27,8 @@ function App() {
                         <Footer />
                     </div>
                 } />
-
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
     );
