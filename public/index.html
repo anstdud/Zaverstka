@@ -36,5 +36,42 @@
 </head>
 <body>
 <div id="root"></div>
+<script>
+  if (navigator.userAgent.includes('Edge') ||
+          navigator.userAgent.includes('YaBrowser')) {
+
+    console.log('Applying favicon fix for Edge/Yandex');
+
+    const faviconLinks = [
+      { rel: 'icon', href: 'favicon.ico', type: 'image/x-icon' },
+      { rel: 'icon', href: 'favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { rel: 'apple-touch-icon', href: 'apple-touch-icon.png', sizes: '180x180' }
+    ];
+
+    document.querySelectorAll('link[rel*="icon"]').forEach(link => link.remove());
+
+    faviconLinks.forEach(linkData => {
+      const link = document.createElement('link');
+      Object.keys(linkData).forEach(key => {
+        link.setAttribute(key, linkData[key]);
+      });
+      document.head.appendChild(link);
+    });
+
+    const forceFaviconUpdate = () => {
+      const link = document.createElement('link');
+      link.rel = 'icon';
+      link.href = 'favicon.ico?v=' + new Date().getTime();
+      document.head.appendChild(link);
+
+      setTimeout(() => {
+        const img = new Image();
+        img.src = 'favicon.ico?v=' + new Date().getTime();
+      }, 100);
+    };
+
+    forceFaviconUpdate();
+  }
+</script>
 </body>
 </html>
