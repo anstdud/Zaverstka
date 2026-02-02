@@ -8,6 +8,7 @@
     "react": "^19.1.1",
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^19.1.1",
+    "react-helmet": "^6.1.0",
     "react-hook-form": "^7.71.1",
     "react-router-dom": "^6.30.3",
     "react-scripts": "^5.0.1"
