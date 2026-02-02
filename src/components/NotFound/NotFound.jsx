@@ -22,7 +22,7 @@ export default function NotFound() {
                 style={{
                     display: 'inline-block',
                     padding: '12px 30px',
-                    backgroundColor: '#007bff',
+                    backgroundColor: '#4C5C13',
                     color: 'white',
                     textDecoration: 'none',
                     borderRadius: '5px'
