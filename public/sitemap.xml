@@ -6,17 +6,26 @@
         <lastmod>2024-02-09</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+
         <image:image>
             <image:loc>https://zaverstka.ru/favicon.ico</image:loc>
-            <image:title>Zaverstka Favicon</image:title>
+            <image:title>Zaverstka ICO Favicon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://zaverstka.ru/favicon-120x120.png</image:loc>
+            <image:title>Zaverstka 120x120 Favicon</image:title>
         </image:image>
         <image:image>
             <image:loc>https://zaverstka.ru/favicon-192x192.png</image:loc>
-            <image:title>Zaverstka Logo</image:title>
-            <image:caption>Разработка сайтов</image:caption>
+            <image:title>Zaverstka 192x192 Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://zaverstka.ru/favicon.svg</image:loc>
+            <image:title>Zaverstka SVG Logo</image:title>
         </image:image>
         <image:image>
             <image:loc>https://zaverstka.ru/favicon-32x32.png</image:loc>
+            <image:title>Zaverstka 32x32 Favicon</image:title>
         </image:image>
     </url>
 </urlset>

@@ -1,13 +1,19 @@
 {
   "rewrites": [
     {
-      "source": "/404",
-      "destination": "/index.html",
-      "statusCode": 404
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/favicon-120x120.png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     }
   ]
 }
