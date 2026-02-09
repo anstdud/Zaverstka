@@ -1,11 +1,21 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function NotFound() {
+    const location = useLocation();
+
     useEffect(() => {
+        document.title = '404 - Страница не найдена | Zaverstka';
+
         if (typeof window !== 'undefined') {
-            document.title = '404 - Страница не найдена | Zaverstka';
+            const meta = document.createElement('meta');
+            meta.name = 'prerender-status-code';
+            meta.content = '404';
+            document.head.appendChild(meta);
         }
-    }, []);
+
+        console.log('404 page accessed:', location.pathname);
+    }, [location]);
 
     return (
         <div style={{

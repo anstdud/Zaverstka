@@ -7,6 +7,7 @@ import Contacts from './components/Contacts/Contacts.jsx';
 import Process from "./components/Process/Process.jsx";
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
 import Footer from "./components/Footer/Footer.jsx";
+import NotFound from './components/NotFound/NotFound.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
                 } />
 
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
     );
