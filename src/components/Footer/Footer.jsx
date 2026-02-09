@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className={styles.footerContainer}>
                     <div className={styles.footerContent}>
                         <div className={styles.footerSection}>
-                            <h3>Zaverstka Team</h3>
+                            <h3>Zaverstka</h3>
                             <p>Создаем цифровые решения для вашего бизнеса</p>
                         </div>
                     </div>
@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.footerBottom}>
-                    <p>© 2026 Zaverstka Team. Все права защищены.</p>
+                    <p>© 2026 Zaverstka. Все права защищены.</p>
                 </div>
             </div>
         </footer>
